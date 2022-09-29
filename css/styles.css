@@ -1,9 +1,10 @@
-/*  primary  text  color: #757575   */
-/*  title text     color: #212121       */
-/*  links color:  #2196F3            */
-/*  background color: #ffffff */
-/* secondary background color: #F5F4FA */
-/* BG hero color:  #2F303A   */
+*,
+::before,
+::after {
+   box-sizing: border-box;
+}
+
+
 :root {
    --primary-text-color: #757575;
    --title-text-color: #212121;
@@ -13,16 +14,60 @@
    --background-hero-color: #2F303A;
 }
 
-
 /*  reseting styles */
-.list {
+
+
+ul {
    list-style: none;
+   padding: 0;
+   margin: 0;
 }
 
 a {
    text-decoration: none;
+   color: inherit;
+   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+}
+
+p {
+   margin: 0;
+}
+
+address {
    font-style: normal;
 }
+
+button {
+   font-family: inherit;
+   padding: 0;
+   margin: 0;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+
+.container {
+   max-width: 1200px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+
+
+
 
 
 body {
@@ -33,6 +78,11 @@ body {
 
 
 /* Header styles */
+.header.container {
+   height: 80px;
+   display: flex;
+   border-bottom: 1px solid #ECECEC;
+}
 
 /* Logo styles */
 .logo {
@@ -44,6 +94,8 @@ body {
    line-height: 1.2;
    letter-spacing: 0.03em;
    color: #000000;
+   margin-top: auto;
+   margin-bottom: auto;
 }
 
 .logo .part-logo {
@@ -71,14 +123,39 @@ body {
    color: var(--accent-color);
 }
 
+.navigation {
+   display: flex;
+   align-items: center;
+}
 
-/* Contacts styles */
-.contacts a {
+.site-nav,
+.contacts.list {
+   display: flex;
+   margin: o;
+   margin-left: auto;
+   align-items: center;
+}
+
+.site-nav {
+   margin-left: 95px;
+   gap: 50px;
+}
+
+.nav-items {
+   flex-basis: calc((100% - 2 * 50px)/2);
+}
+
+
+
+/* Header contacts styles */
+.contacts-link {
    font-weight: 500;
    font-size: 14px;
    line-height: 16px;
    letter-spacing: 0.02em;
    color: var(--primary-text-color);
+
+   margin-left: auto;
 }
 
 .contacts :hover,
@@ -86,6 +163,13 @@ body {
    color: var(--accent-color);
 }
 
+.contacts-item {
+   margin-left: auto;
+}
+
+.contacts-link {
+   margin-left: 50px;
+}
 
 
 /* Main styles */
@@ -93,6 +177,7 @@ body {
 /* Hero styles */
 .hero {
    background-color: var(--background-hero-color);
+   padding: 200px 240px;
 }
 
 .hero-title {
@@ -102,21 +187,34 @@ body {
    text-align: center;
    letter-spacing: 0.06em;
    text-transform: uppercase;
-   color: #ffffff
+   color: #ffffff;
+
+   margin-bottom: 30px;
+}
+
+.hero-wrapper {
+   width: 700px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .hero .button {
+   display: flex;
+   padding: 10px 32px;
+   margin-left: auto;
+   margin-right: auto;
+
    color: #ffffff;
    background-color: var(--accent-color);
-   border: none;
 
+   border: none;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+   border-radius: 4px;
+
+   font-family: Roboto, sans-serif;
    font-weight: 700;
    font-size: 16px;
    line-height: 1.8;
-
-   display: flex;
-   align-items: center;
-   text-align: center;
    letter-spacing: 0.06em;
 }
 
@@ -124,7 +222,8 @@ body {
 .hero .button:focus {
    cursor: pointer;
    color: #000000;
-} 
+   background-color: #188CE8;
+}
 
 
 
@@ -136,6 +235,23 @@ body {
    line-height: 1.2;
    text-align: center;
    letter-spacing: 0.03em;
+
+   margin-bottom: 50px;
+}
+
+/*  What we do section  */
+
+.we-do.section {
+   padding-bottom: 95px;
+}
+
+.we-do.list {
+   display: flex;
+}
+
+.we-do-item:nth-child(-n+2) {
+   margin-right: 30px;
+
 }
 
 /* "Our advantages" styles */
@@ -147,6 +263,8 @@ body {
    line-height: 1.2;
    letter-spacing: 0.03em;
    text-transform: uppercase;
+
+   margin-bottom: 10px;
 }
 
 .advantages-text {
@@ -156,15 +274,45 @@ body {
    letter-spacing: 0.03em;
 }
 
+.hide-title {
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   border: 0;
+   padding: 0;
+   clip: rect(0 0 0 0);
+   clip-path: inset(50%);
+   margin: -1px;
+}
+
+.advantages-list {
+   display: flex;
+}
+
+.advantages-item:nth-child(-n+3) {
+   margin-right: 30px;
+}
+
+.advantages.section {
+   padding-top: 95px;
+   padding-bottom: 95px;
+}
+
 
 /* "Our team"  styles */
 
 .section.team {
    background-color: var(--secondary-background-color);
+   padding-top: 95px;
+   padding-bottom: 95px;
 }
 
 .team-card {
    background-color: var(--primary-background-color);
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+   border-radius: 0px 0px 4px 4px;
 }
 
 .worker-name {
@@ -173,6 +321,7 @@ body {
    line-height: 1.2;
    letter-spacing: 0.03em;
    color: var(--title-text-color);
+   margin-bottom: 10px;
 }
 
 .team-card.position {
@@ -182,12 +331,32 @@ body {
    letter-spacing: 0.03em;
 }
 
+.team-list {
+   display: flex;
+   gap: 30px;
+   flex-basis: calc((100% - 3 * 30px)/4);
+}
+
+.naming {
+   padding: 30px 62px;
+   text-align: center;
+}
 
 
 
 /* Portfolio styles */
 
 /* Buttons list */
+.button-list {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 50px;
+}
+
+.buttons-choose:not(:last-child) {
+   margin-right: 10px;
+}
+
 
 .button-list .button {
    font-family: Roboto;
@@ -198,7 +367,15 @@ body {
    line-height: 1.62;
    letter-spacing: 0.03em;
    border: none;
+
+   padding: 6px 22px;
 }
+
+/* 
+.button-list.button{
+padding: 6px 22px;
+} */
+
 
 .button-list .button:hover,
 .button-list .button:focus,
@@ -208,10 +385,32 @@ body {
 }
 
 /* Examples  */
+.examples-container {
+   /* padding: 0; */
+   padding-top: 95px;
+   padding-bottom: 95px;
+   outline: 1px solid red;
+}
 
 .examples {
+   box-sizing: border-box;
    background-color: #FFFFFF;
+   border: 1px solid #EEEEEE;
+   flex-basis: calc((100% - 2 * 30px)/3);
 }
+
+.examples-text {
+   padding: 20px 25px;
+}
+
+.works-list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   justify-content: center;
+}
+
+
 
 
 .examples .name {
@@ -220,6 +419,7 @@ body {
    line-height: 2.0;
    letter-spacing: 0.06em;
    color: var(--title-text-color);
+
 }
 
 .examples .type {
@@ -235,10 +435,17 @@ footer {
    background-color: var(--background-hero-color);
 }
 
+.footer.container {
+   padding-top: 60px;
+   padding-bottom: 60px;
+}
+
 
 /* Contacts styles */
-.footer.logo {
+.footer .logo {
+   display: inline-block;
    color: #FFFFFF;
+   margin-bottom: 20px;
 }
 
 .footer-contacts a {
@@ -252,6 +459,10 @@ footer {
 
 .footer-contacts .adress {
    color: #FFFFFF;
+}
+
+.footer-contacts-item:nth-child(-n+2) {
+   margin-bottom: 10px;
 }
 
 .footer-contacts :focus,
