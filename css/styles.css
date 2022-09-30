@@ -384,14 +384,15 @@ header {
    padding-bottom: 95px;
 }
 
-.examples-item {
+.example-item {
    box-sizing: border-box;
    background-color: #FFFFFF;
    border: 1px solid #EEEEEE;
    flex-basis: calc((100% - 2 * 30px)/3);
+   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.examples-text {
+.example-text {
    padding: 20px 25px;
 }
 
@@ -402,17 +403,17 @@ header {
    justify-content: center;
 }
 
-
-.examples .name {
+.example-name {
    font-weight: 700;
    font-size: 18px;
    line-height: 2.0;
    letter-spacing: 0.06em;
+   margin-bottom: 4px;
    color: var(--title-text-color);
 
 }
 
-.examples .type {
+.example-type {
    font-weight: 400;
    font-size: 16px;
    line-height: 1.8;
